@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Drag and Drop Demo</title>
+
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="main.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="demo.js?v=1.0"></script>
+    <style>
+        .div1{
+        width: 100px;height: 100px;border: 1px solid #ccc;
+            background-color:forestgreen;float: left;text-align: center;color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+	<div class="wrapper clearfix">		
+		<div id="dd-elements" class="main-sidebar clearfix" style="float:left;width:15%">
+			<div class="sidebar">
+            <ul class="sidebar-menu">
+				<li draggable="true">
+                <a href="#"><i class="fa fa-bar-chart"></i>
+                    <span>Bar</span>
+                </a> 
+                </li>
+				<li draggable="true">
+                      <a href="#"><i class="fa fa-line-chart"></i>
+                    <span>Line Chart</span>
+                </a> 
+                    
+                </li>
+				<li draggable="true">  <a href="#"><i class="fa fa-area-chart"></i>
+                    <span>Area Chart</span>
+                </a> </li>
+			<li>
+                 <a href="#"><i class="fa fa-tachometer"></i>
+                    <span>Gauge Chart</span>
+                </a> 
+               
+                </li>
+			</ul>
+           </div>
+			
+		</div>
+         <div class="content-wrapper">
+             <div class="content">
+             <div class="drop-target droppable">
+				Drop Here!
+			</div>
+                 </div>
+        </div>
+
+
+	</div>
+</body>
+</html>

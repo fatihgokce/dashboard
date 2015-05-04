@@ -1,0 +1,123 @@
+html,body{
+    height: 100%;min-height: 100%;overflow: hidden;
+}
+html *{padding: 0;margin: 0;}
+/* Layout */
+.container {
+    width: 100%;
+	margin: 0 auto;
+	padding: 1em;
+}
+.wrapper {
+  min-height: 100%;
+  position: static;
+  overflow: hidden;
+}
+.content-wrapper{
+  min-height: 100%;
+  background-color: #ecf0f5;
+  z-index: 800;
+  position: fixed;
+  left: 288px;
+  width: 100%;
+}
+.content {
+  min-height: 100%;
+  padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+a{text-decoration: none;}
+ul,li{list-style:none;}
+.main-sidebar{
+  background: #222d32;
+}
+.main-sidebar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  min-height: 100%;
+  width: 230px;
+  z-index: 810;
+  -webkit-transition: -webkit-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -moz-transition: -moz-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -o-transition: -o-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  transition: transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+}
+/* Demo One */
+.drop-target{
+	border: 5px dashed #D9D9D9;
+	border-radius: 10px;
+	padding: 5em 2em;
+	text-align: center;
+    width: 200px;
+    height: 120px;
+    float: left;
+}
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-menu>li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+      border: 1px solid #3C3C3C;
+  margin: 1px;
+}
+.sidebar-menu>li>a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+}
+.sidebar-menu>li>a {
+  border-left: 3px solid transparent;
+  margin-right: 1px;
+}
+.sidebar-menu>li>a:hover,.sidebar-menu>li.active>a {
+  color: #fff;
+  background: #1e282c;
+  border-left-color: #3c8dbc;
+}
+.sidebar a {
+  color: #b8c7ce;
+}
+.over {
+	background: #F7F7F7;
+}
+
+#drag-elements {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1em;
+}
+
+#drag-elements li {
+	display:block;
+	padding: 0.5em 1em;
+	margin: 0 1em 1em 0;
+	border: 1px solid #D9D9D9;
+	background: #F7F7F7;
+	border-radius: 3px;
+}
+
+
+
+
+/* Clearfix Utils */
+
+.clearfix {
+  *zoom: 1; }
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
