@@ -5,7 +5,7 @@ window.onload = function() {
 	*	Demo 1: Elements
 	*
 	*/
-	var dropZoneOne = document.querySelector('#drop-target-one');
+	var dropZoneOne = document.querySelector('.drop-target');
 	var dragElements = document.querySelectorAll('#drag-elements li');
 	var elementDragged = null;
 
@@ -37,7 +37,7 @@ window.onload = function() {
 
 	// Event Listener for when the dragged element enters the drop zone.
 	dropZoneOne.addEventListener('dragenter', function(e) {
-		this.className = "over";
+		//this.className = "over";
 	});
 
 	// Event Listener for when the dragged element leaves the drop zone.
@@ -50,15 +50,15 @@ window.onload = function() {
 		if (e.preventDefault) e.preventDefault(); 
   	if (e.stopPropagation) e.stopPropagation(); 
 
-		this.className = "";
-		this.innerHTML = "Dropped " + e.dataTransfer.getData('text');
+		//this.className = "";
+		//this.innerHTML = "Dropped " + e.dataTransfer.getData('text');
 
 		// Remove the element from the list.
 		//document.querySelector('#drag-elements').removeChild(elementDragged);
-        if($('#drop-target-one .div1').length>0)
+        if($('.drop-target .div1').length>0)
             return;
         console.log("why");
-        $('#drop-target-one').append("<div class='div1'>apped</div>");
+        $(this).append("<div class='div1'>apped</div>");
         console.log("why2");
 		elementDragged = null;
 
