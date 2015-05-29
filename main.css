@@ -28,6 +28,7 @@ html *{padding: 0;margin: 0;}
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  float: left;
 }
 a{text-decoration: none;}
 ul,li{list-style:none;}
@@ -69,20 +70,21 @@ ul,li{list-style:none;}
       border: 1px solid #3C3C3C;
   margin: 1px;
 }
-.sidebar-menu>li>a {
+.sidebar-menu>li>a,.sidebar-menu>li>div {
   padding: 12px 5px 12px 15px;
   display: block;
 }
-.sidebar-menu>li>a {
+
+.sidebar-menu>li>a,.sidebar-menu>li>div {
   border-left: 3px solid transparent;
   margin-right: 1px;
 }
-.sidebar-menu>li>a:hover,.sidebar-menu>li.active>a {
+.sidebar-menu>li>a:hover,.sidebar-menu>li.active>a,.sidebar-menu>li>div:hover,.sidebar-menu>li.active>div{
   color: #fff;
   background: #1e282c;
   border-left-color: #3c8dbc;
 }
-.sidebar a {
+.sidebar a ,.sidebar-menu>li>div{
   color: #b8c7ce;
 }
 .over {

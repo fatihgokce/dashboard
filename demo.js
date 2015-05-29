@@ -1,69 +1,50 @@
+function makeDroppable(){
+    var ind=$(".drp").length-1;
+    console.log("ind:"+ind);
+    $(".drp:eq("+ind+")").droppable({
+			 
+			 activeClass: "ui-state-hover",
+			 hoverClass: "ui-state-active",
+		 
+		   drop: function(event, ui){
+		    // alert($(event.target);
+			   $(event.target).css("background-color","pink");
+			   //$("#wrp").append('<div class="box drp" style="background-color:blue;border:1px dotted #ccc"></div>');
+	           $(event.target).html(ui.draggable.html());
+			   $(' <div class="content"><div class="drop-target  drp">Drop Here!</div></div>')
+			   .appendTo("#wrp").droppable();
+			   makeDroppable();
+			   console.log("main drop function");
+			   //drag(event, ui );
+		   }
+		})
+  }
 window.onload = function() {
-
-	/**
-	*
-	*	Demo 1: Elements
-	*
-	*/
-	var dropZoneOne = document.querySelector('.drop-target');
-	var dragElements = document.querySelectorAll('#drag-elements li');
-	var elementDragged = null;
-
-	for (var i = 0; i < dragElements.length; i++) {
-
-		// Event Listener for when the drag interaction starts.
-		dragElements[i].addEventListener('dragstart', function(e) {
-			e.dataTransfer.effectAllowed = 'move';
-			e.dataTransfer.setData('text', this.innerHTML);
-			elementDragged = this;
-		});
-
-		// Event Listener for when the drag interaction finishes.
-		dragElements[i].addEventListener('dragend', function(e) {
-			elementDragged = null;
-		});
-	};
-
-	// Event Listener for when the dragged element is over the drop zone.
-	dropZoneOne.addEventListener('dragover', function(e) {
-		if (e.preventDefault) {
-			e.preventDefault();
-		}
-
-		e.dataTransfer.dropEffect = 'move';
-
-		return false;
+	$(function(){
+	 		  $(".sidebar-menu  li").draggable ({
+			     
+		   	   //containment :"#main",
+		   	     revert: "invalid",
+		   	     helper: "clone",
+		         opacity :0.8,
+		         cursor : "crosshair"
+	     });
+	 $(".drp").droppable({
+			 
+			 activeClass: "ui-state-hover",
+			 hoverClass: "ui-state-active",
+		 
+		   drop: function(event, ui){
+		    // alert($(event.target);
+			   $(event.target).css("background-color","pink");
+			   //$("#wrp").append('<div class="box drp" style="background-color:blue;border:1px dotted #ccc"></div>');
+			   $(event.target).html(ui.draggable.html());
+			   $(' <div class="content"><div class="drop-target  drp">Drop Here!</div></div>')
+			   .appendTo("#wrp").droppable();
+			   makeDroppable();
+			   console.log("main drop function");
+			   //drag(event, ui );
+		   }
+		})	
 	});
-
-	// Event Listener for when the dragged element enters the drop zone.
-	dropZoneOne.addEventListener('dragenter', function(e) {
-		//this.className = "over";
-	});
-
-	// Event Listener for when the dragged element leaves the drop zone.
-	dropZoneOne.addEventListener('dragleave', function(e) {
-		this.className = "";
-	});
-
-	// Event Listener for when the dragged element dropped in the drop zone.
-	dropZoneOne.addEventListener('drop', function(e) {
-		if (e.preventDefault) e.preventDefault(); 
-  	if (e.stopPropagation) e.stopPropagation(); 
-
-		//this.className = "";
-		//this.innerHTML = "Dropped " + e.dataTransfer.getData('text');
-
-		// Remove the element from the list.
-		//document.querySelector('#drag-elements').removeChild(elementDragged);
-        if($('.drop-target .div1').length>0)
-            return;
-        console.log("why");
-        $(this).append("<div class='div1'>apped</div>");
-        console.log("why2");
-		elementDragged = null;
-
-		return false;
-	});
-
-	
 };
