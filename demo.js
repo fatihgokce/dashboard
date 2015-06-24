@@ -12,15 +12,16 @@ function makeDroppable(){
 			   //$("#wrp").append('<div class="box drp" style="background-color:blue;border:1px dotted #ccc"></div>');
 	           $(event.target).html(ui.draggable.html());
 			   $(' <div class="content"><div class="drop-target  drp">Drop Here!</div></div>')
-			   .appendTo("#wrp").droppable();
+			   .appendTo("#wrp").droppable().draggable();;
 			   makeDroppable();
 			   console.log("main drop function");
 			   //drag(event, ui );
 		   }
-		})
+		})	
   }
 window.onload = function() {
 	$(function(){
+		 $(".rs").resizable();
 	 		  $(".sidebar-menu  li").draggable ({
 			     
 		   	   //containment :"#main",
@@ -40,11 +41,11 @@ window.onload = function() {
 			   //$("#wrp").append('<div class="box drp" style="background-color:blue;border:1px dotted #ccc"></div>');
 			   $(event.target).html(ui.draggable.html());
 			   $(' <div class="content"><div class="drop-target  drp">Drop Here!</div></div>')
-			   .appendTo("#wrp").droppable();
+			   .appendTo("#wrp").droppable().draggable();
 			   makeDroppable();
 			   console.log("main drop function");
 			   //drag(event, ui );
 		   }
-		})	
+		}).draggable();	
 	});
 };
